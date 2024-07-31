@@ -1,0 +1,13 @@
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/MarketData.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/edit_cache.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/rebuild_cache.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/list_install_components.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/install.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/install/local.dir
+/home/coolguy77/MySoftware/MarketData/build/CMakeFiles/install/strip.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/edit_cache.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/rebuild_cache.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/list_install_components.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/install.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/install/local.dir
+/home/coolguy77/MySoftware/MarketData/build/src/CMakeFiles/install/strip.dir
