@@ -15,19 +15,19 @@ std::mutex& MarketData::mtx() {
 
 void MarketData::newBar() {
 	for (const auto& callback : onNewBar_) {
-		callback(candles);
+		callback(*this);
 	}
 }
 
 void MarketData::update() {
 	for (const auto& callback : onUpdate_) {
-		callback(candles);
+		callback(*this);
 	}
 }
 
 void MarketData::reload() {
 	for (const auto& callback : onReload_) {
-		callback(candles);
+		callback(*this);
 	}
 }
 

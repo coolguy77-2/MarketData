@@ -8,15 +8,15 @@
 #include "Candle.h"
 
 namespace Timeframe {
-	enum {
-		ONE_MINUTE,
-		FIVE_MINUTE,
-		FIFTEEN_MINUTE,
-		THIRTY_MINUTE,
-		ONE_HOUR,
-		FOUR_HOUR,
-		ONE_DAY,
-		ONE_WEEK
+	enum : int {
+		ONE_MINUTE = 60,
+		FIVE_MINUTE = 60 * 5,
+		FIFTEEN_MINUTE = 60 * 15,
+		THIRTY_MINUTE = 60 * 30,
+		ONE_HOUR = 60 * 60,
+		FOUR_HOUR = 60 * 60 * 4,
+		ONE_DAY = 60 * 60 * 24,
+		ONE_WEEK = 60 * 60 * 24 * 7
 	};
 
 	inline static std::string str(int index) {
@@ -37,9 +37,7 @@ namespace Timeframe {
 class MarketData {
 private:
 
-	typedef const std::vector<Candle>& Data;
-
-	typedef std::function<void(Data)> DataUpdate;
+	typedef std::function<void(const MarketData&)> DataUpdate;
 
 	mutable std::vector<DataUpdate> onNewBar_;
 	mutable std::vector<DataUpdate> onUpdate_;
