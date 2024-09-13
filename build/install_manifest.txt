@@ -1,3 +1,0 @@
-/usr/local/lib/libMarketData.a
-/usr/local/include/MarketData/MarketData.h
-/usr/local/include/MarketData/Candle.h

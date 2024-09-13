@@ -29,7 +29,7 @@ namespace Timeframe {
 		case FOUR_HOUR: return "H4";
 		case ONE_DAY: return "D1";
 		case ONE_WEEK: return "W1";
-		default: return {};
+		default: return "";
 		}
 	}
 }

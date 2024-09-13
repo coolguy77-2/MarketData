@@ -5,8 +5,8 @@ MarketData::MarketData() {
 }
 
 MarketData::MarketData(const std::vector<Candle>& c, int tf, const std::string& s)
-	: candles(c), timeframe(tf), symbol(s) {
-		
+	: candles(c), symbol(s), timeframe(tf) {
+
 }
 
 std::mutex& MarketData::mtx() {
