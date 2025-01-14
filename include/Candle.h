@@ -1,10 +1,33 @@
 #pragma once
 
-#include <boost/date_time/posix_time/posix_time.hpp>
+#include <string>
+#include <vector>
+#include <chrono>
+#include <sstream>
+#include <iomanip>
 
 struct Candle {
+	
+	struct Date {
+		std::chrono::_V2::system_clock::time_point timepoint;
 
-public:
+		Date() {}
+
+		// Converts from "YYYY-MM-DD HH:MM:SS"
+		Date(const std::string& datetime) {
+			std::tm tm = {};
+			std::stringstream ss(datetime);
+			ss >> std::get_time(&tm, "%Y-%m-%D %H:%M:%S");
+			timepoint = std::chrono::system_clock::from_time_t(std::mktime(&tm));
+		}
+
+		bool isDayDifferent(const Date& other) const {
+			auto tt = std::chrono::system_clock::to_time_t(timepoint);
+			auto ttOther = std::chrono::system_clock::to_time_t(other.timepoint);
+
+			return gmtime(&tt)->tm_wday != gmtime(&ttOther)->tm_wday;
+		}
+	};
 
 	std::vector<std::string> descriptions;
 
@@ -12,29 +35,27 @@ public:
 	double close = 0;
 	double high = 0;
 	double low = 0;
-	double vwap = 0;
-
 	double volume = 0;
+	Date datetime;
 
 	int number = -1;
 
-	boost::posix_time::ptime datetime;
-
-	bool mouseHovering = false;
+	double vwap = 0;
 
 	Candle() {}
 
+	// Pass Datetime as "%Y-%m-%d %H:%M:%S"
 	Candle(double open, double close, double high, double low, double volume,
-		std::string datetime, int number = -1, double vwap = 0) : 
+		const Date& datetime, int number = -1, double vwap = 0) : 
 		open(open),
 		close(close),
 		high(high),
 		low(low),
-		vwap(vwap),
 		volume(volume),
-		number(number) {
+		datetime(datetime),
+		number(number),
+		vwap(vwap) {
 
-		this->datetime = boost::posix_time::time_from_string(datetime);
 	}
 
 	double relativeLocation(double value) const {

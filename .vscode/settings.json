@@ -59,6 +59,12 @@
 		"thread": "cpp",
 		"cfenv": "cpp",
 		"cinttypes": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"charconv": "cpp",
+		"optional": "cpp",
+		"format": "cpp",
+		"span": "cpp",
+		"variant": "cpp",
+		"text_encoding": "cpp"
 	}
 }
