@@ -47,11 +47,11 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/coolguy77/MySoftware/MarketData/build/src/cmake_install.cmake")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/coolguy77/MySoftware/MarketData/build/libMarketData.a")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/MarketData" TYPE DIRECTORY FILES "/home/coolguy77/MySoftware/MarketData/include/")
 endif()
 
