@@ -21,11 +21,18 @@ struct Candle {
 			timepoint = std::chrono::system_clock::from_time_t(std::mktime(&tm));
 		}
 
-		bool isDayDifferent(const Date& other) const {
+		inline bool isDayDifferent(const Date& other) const {
 			auto tt = std::chrono::system_clock::to_time_t(timepoint);
 			auto ttOther = std::chrono::system_clock::to_time_t(other.timepoint);
 
 			return gmtime(&tt)->tm_wday != gmtime(&ttOther)->tm_wday;
+		}
+
+		operator std::string() const {
+			auto tt = std::chrono::_V2::system_clock::to_time_t(timepoint);
+			std::stringstream ss;
+			ss << std::put_time(gmtime(&tt), "%Y-%m-%d %H:%M:%S");
+			return ss.str();
 		}
 	};
 
