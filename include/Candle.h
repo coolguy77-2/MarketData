@@ -17,7 +17,7 @@ struct Candle {
 		Date(const std::string& datetime) {
 			std::tm tm = {};
 			std::stringstream ss(datetime);
-			ss >> std::get_time(&tm, "%Y-%m-%D %H:%M:%S");
+			ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
 			timepoint = std::chrono::system_clock::from_time_t(std::mktime(&tm));
 		}
 
@@ -31,7 +31,7 @@ struct Candle {
 		operator std::string() const {
 			auto tt = std::chrono::_V2::system_clock::to_time_t(timepoint);
 			std::stringstream ss;
-			ss << std::put_time(localtime(&tt), "%Y-%m-%D %H:%M:%S");
+			ss << std::put_time(localtime(&tt), "%Y-%m-%d %H:%M:%S");
 			return ss.str();
 		}
 	};
